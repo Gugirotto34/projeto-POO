@@ -1,4 +1,4 @@
-
+#classe que cria o cliente e possue as funcoes de edita, cadastrar, e pesquisar
 class Cliente:
     def __init__(self, nome, idade,cpf,medicamento):
         self.nome=nome
@@ -23,10 +23,14 @@ class Cliente:
     def set_cpf(self,cpf):
         self.cpf = cpf
     def set_medicamento(self,medicamento):
-        selfmedicamento = medicamento
+        self.medicamento = medicamento
     def set_info(self, nome, idade,cpf,medicamento):
         self.nome=nome
         self.idade=idade
         self.cpf=cpf
         self.medicamento=medicamento
+    '''def del_info(self):
+        self.nome=''
+        self.idade= ''
+        self.cpf='''''
         

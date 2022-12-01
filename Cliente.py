@@ -1,10 +1,13 @@
 #classe que cria o cliente e possue as funcoes de edita, cadastrar, e pesquisar
 class Cliente:
-    def __init__(self, nome, idade,cpf,medicamento):
+    def __init__(self,idC, nome, idade,cpf,medicamento):
+        self.idC=idC
         self.nome=nome
         self.idade=idade
         self.cpf=cpf
         self.medicamento=medicamento
+    def get_id(self):
+        return self.idC
     def get_nome(self):
         return self.nome
     def get_idade(self):
@@ -14,8 +17,10 @@ class Cliente:
     def get_medicamento(self):
         return self.medicamento
     def get_info(self):
-        print('nome: {} idade:{} cpf: {} medicamento: {}'.format(self.nome,self.idade,self.cpf,self.medicamento))
+        print('id: {} nome: {} idade:{} cpf: {} medicamento: {}'.format(self.idC,self.nome,self.idade,self.cpf,self.medicamento))
     
+    def set_idC(self,idC):
+        self.idC=idC
     def set_nome(self,nome):
         self.nome = nome
     def set_idade(self,idade):

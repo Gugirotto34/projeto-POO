@@ -1,8 +1,8 @@
 from Cliente import Cliente
-from Medicamento import Medicamento
+from Perfume_Medicamento import Medicamento
 from ClienteFisico import ClienteFisico
 from ClienteJuridico import ClienteJuridico
-from Perfume import Perfume
+from Perfume_Medicamento import Perfume
 
 
 def cadastroCliente(clientes, idC):

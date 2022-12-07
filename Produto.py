@@ -1,5 +1,5 @@
 
-class Medicamento:
+class Produto:
     def __init__(self, idM,nome, validade,preço,tipo):
         self.idM=idM
         self.nome=nome

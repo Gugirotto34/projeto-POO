@@ -5,7 +5,7 @@ class Cliente:
         self.nome=nome
         self.idade=idade
         self.medicamento=medicamento
-    def get_id(self):
+    def get_idC(self):
         return self.idC
     def get_nome(self):
         return self.nome
@@ -14,7 +14,7 @@ class Cliente:
     def get_medicamento(self):
         return self.medicamento
     def get_info(self):
-        print('id: {} nome: {} idade:{}  medicamento: {}'.format(self.idC,self.nome,self.idade,self.medicamento),end=" ")
+        print('id: {} nome: {} idade:{}  produto: {}'.format(self.idC,self.nome,self.idade,self.medicamento),end=" ")
     
     def set_idC(self,idC):
         self.idC=idC
@@ -24,8 +24,4 @@ class Cliente:
         self.idade = idade
     def set_medicamento(self,medicamento):
         self.medicamento = medicamento
-    '''def del_info(self):
-        self.nome=''
-        self.idade= ''
-        self.cpf='''''
         

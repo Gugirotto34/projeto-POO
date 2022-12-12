@@ -10,8 +10,8 @@ def cadastroCliente(clientes, idC):
         buffer = ''
         idC += 1
         nome, idade, cpf_cnpj, medicamento = input(
-            'digite o nome, a idade, o cpf/cnpj ,e o medicamento do cliente (separado por espaços) ').split()
-        selc = int(input('digite o tipo de pessoa que é 1-fisica 2-juridica'))
+            'digite o nome, a idade, o cpf/cnpj ,e o produto do cliente (separado por espaços) ').split()
+        selc = int(input('digite o tipo de pessoa que é 1-fisica 2-juridica '))
         while not 1 <= selc <= 2:
             selc = int(
                 input('valor invalido , digite o tipo de pessoa que é 1-fisica 2-juridica '))
@@ -35,10 +35,10 @@ def editCliente(clientes):
     idF = int(input('Digite o ID do cliente '))
     flag = False
     for func in clientes:  # percorre a lista de clientes
-        if idF == func.get_id():  # busca pelo ID do cliente a ser alterado
+        if idF == func.get_idC():  # busca pelo ID do cliente a ser alterado
             print('Digite as novas informações do cliente')
             nome, idade, cpf, medicamento = input(
-                'digite o nome, a idade, o cpf/cnpj e o medicamento do cliente (separado por espaços) ').split()
+                'digite o nome, a idade, o cpf/cnpj e o produto do cliente (separado por espaços) ').split()
             selc = int(
                 input('digite o tipo de pessoa que é 1-fisica 2-juridica '))
             while not 1 <= selc <= 2:
@@ -48,26 +48,27 @@ def editCliente(clientes):
                 func.set_cpf(cpf)
                 func.set_tipo('fisica')
             elif selc == 2:
-                func.set_cnpj(cpf)
+                func.set_cpf(cpf)
                 func.set_tipo('juridica')
             func.set_nome(nome)
             func.set_idade(idade)
             func.set_medicamento(medicamento)
 
             flag = True
-        if flag == False:
+    if flag == False:
             print("ID não encontrado!")
     return clientes
 
 
 def delCliente(clientes):
-    deletar = str(input('digite a id do funcionario que voce quer deletar: '))
+    deletar = int(input('digite a id do cliente que voce quer deletar: '))
     flag = False
     # percorre a lista de funcionários  # percorre a lista de funcionários
-    for i, j in enumerate(clientes):
-        if deletar == j.get_id():
+    for i,j in enumerate(clientes):
+        if deletar == j.get_idC():
             clientes.pop(i)
             flag = True
+            print('cliente deletado com sucesso')
     if flag == False:
         print("Id não cadastrado!")
     return clientes
@@ -78,7 +79,7 @@ def pesquisaCliente(clientes):
     print('')
     flag=False
     for a in range(len(clientes)):
-        if clientes[a].get_nome() == termo or clientes[a].get_cpf() == termo or clientes[a].get_cnpj() == termo or clientes[a].get_idade() == termo or clientes[a].get_medicamento() == termo or clientes[a].get_idC() == termo:
+        if clientes[a].get_nome() == termo or clientes[a].get_cpf() == termo or clientes[a].get_idade() == termo or clientes[a].get_medicamento() == termo or str(clientes[a].get_idC()) == termo or clientes[a].get_tipo() == termo:
             clientes[a].get_info()
             flag=True
     if flag==False:
@@ -98,7 +99,7 @@ def cadastroMedic(medic, idM):
         buffer = ''
         idM += 1
         nome, validade,preço = input(
-            'digite o nome, a validade do medicamento e o preço de compra ').split()
+            'digite o nome, a validade do produto e o preço de compra ').split()
         selc = int(input('digite o tipo de produto que é 1-medicamento 2-perfume '))
         while not 1 <= selc <= 2:
             selc = int(
@@ -147,13 +148,14 @@ def editMedic(medic):
 
 
 def delMedic(medic):
-    deletar = str(input('digite a id do medicamento que voce quer deletar: '))
+    deletar = int(input('digite a id do produto que voce quer deletar: '))
     flag = False
     # percorre a lista de funcionários  # percorre a lista de funcionários
-    for i, j in enumerate(medic):
-        if deletar == j.get_id():
+    for i,j in enumerate(medic):
+        if deletar == j.get_idM():
             medic.pop(i)
             flag = True
+            print('produto deletado com sucesso')
     if flag == False:
         print("Id não cadastrado!")
     return medic
@@ -164,7 +166,7 @@ def pesquisaMedic(medic):
     print('')
     flag=False
     for a in range(len(medic)):
-        if medic[a].get_nome() == termo or medic[a].get_validade() == termo or medic[a].get_idM() == termo or medic[a].get_preço() == termo or medic[a].get_tipo() == termo or medic[a].get_venda() == termo:
+        if medic[a].get_nome() == termo or medic[a].get_validade() == termo or str(medic[a].get_idM()) == termo or medic[a].get_preço() == termo or medic[a].get_tipo() == termo or medic[a].get_venda() == termo or medic[a].get_tipo() == termo:
             medic[a].get_info()
             flag=True
     if flag==False:

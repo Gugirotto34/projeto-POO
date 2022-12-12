@@ -20,10 +20,6 @@ class Produto:
     def get_tipo(self):
         return self.tipo
     
-    def gerarVenda(self,preço):
-        print('Gerando preço de venda há 300 porcento de lucro')
-        self.venda =float(preço)*3
-        print('preço de venda: {}'.format(self.venda))
     
     def get_info(self):
         print('id: {} nome: {} validade:{} preço de compra: {} reais preço de venda: {} reais tipo: {}'.format(self.idM,self.nome,self.validade,self.preço,self.venda,self.tipo))

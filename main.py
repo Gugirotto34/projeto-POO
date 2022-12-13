@@ -89,8 +89,12 @@ def pesquisaCliente(clientes):
 
 def printCliente(clientes):
     print('')
+    contador=0
     for a in range(len(clientes)):
+        contador+=1
         clientes[a].get_info()
+    if contador == 0:
+        print('não há nenhumn cliente cadastrado')
     print('')
 
 
@@ -176,8 +180,12 @@ def pesquisaMedic(medic):
 
 def printMedic(medic):
     print('')
+    contador=0
     for a in range(len(medic)):
         medic[a].get_info()
+        contador+=1
+    if contador == 0:
+        print('não há nenhum produto cadastrado')
     print('')
 
 
